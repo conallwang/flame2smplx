@@ -1,0 +1,28 @@
+datasets:
+    mesh_folder:
+        data_folder: 'data/example_obj/'
+        ext: '.obj'
+deformation_transfer_path: 'data/flame2smplx_deftrafo.pkl'
+output_folder: 'output/example'
+mask_ids_fname: 'data/SMPL-X__FLAME_vertex_ids.npy'
+summary_steps: 100
+batch_size: 1
+
+edge_fitting:
+    per_part: False
+
+skip_optim: "body_pose, left_hand_pose, right_hand_pose"
+
+optim:
+    type: 'trust-ncg'
+    maxiters: 200
+    gtol: 1e-06
+
+body_model:
+    model_type: "smplx"
+    gender: "neutral"
+    folder: "models"
+    use_compressed: False
+    use_face_contour: True
+    num_betas: 300
+    num_expression_coeffs: 100
